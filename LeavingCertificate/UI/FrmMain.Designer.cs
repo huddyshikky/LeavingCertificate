@@ -1,5 +1,5 @@
 ﻿
-namespace LeavingCertificate
+namespace LeavingCertificate.UI
 {
     partial class FrmMain
     {
@@ -31,12 +31,12 @@ namespace LeavingCertificate
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuRegister = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuTransact = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuReports = new System.Windows.Forms.ToolStripMenuItem();
-            this.smnuRegisterStudent = new System.Windows.Forms.ToolStripMenuItem();
-            this.smnuRegisterStream = new System.Windows.Forms.ToolStripMenuItem();
             this.smnuRegisterSchool = new System.Windows.Forms.ToolStripMenuItem();
+            this.smnuRegisterStream = new System.Windows.Forms.ToolStripMenuItem();
+            this.smnuRegisterStudent = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTransact = new System.Windows.Forms.ToolStripMenuItem();
             this.smnuCreateLeaving = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuReports = new System.Windows.Forms.ToolStripMenuItem();
             this.smnuPrintLeaving = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
@@ -64,6 +64,25 @@ namespace LeavingCertificate
             this.mnuRegister.Size = new System.Drawing.Size(61, 20);
             this.mnuRegister.Text = "Register";
             // 
+            // smnuRegisterSchool
+            // 
+            this.smnuRegisterSchool.Name = "smnuRegisterSchool";
+            this.smnuRegisterSchool.Size = new System.Drawing.Size(180, 22);
+            this.smnuRegisterSchool.Text = "School Details";
+            this.smnuRegisterSchool.Click += new System.EventHandler(this.smnuRegisterSchool_Click);
+            // 
+            // smnuRegisterStream
+            // 
+            this.smnuRegisterStream.Name = "smnuRegisterStream";
+            this.smnuRegisterStream.Size = new System.Drawing.Size(180, 22);
+            this.smnuRegisterStream.Text = "Stream Details";
+            // 
+            // smnuRegisterStudent
+            // 
+            this.smnuRegisterStudent.Name = "smnuRegisterStudent";
+            this.smnuRegisterStudent.Size = new System.Drawing.Size(180, 22);
+            this.smnuRegisterStudent.Text = "Student Details";
+            // 
             // mnuTransact
             // 
             this.mnuTransact.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -72,6 +91,12 @@ namespace LeavingCertificate
             this.mnuTransact.Size = new System.Drawing.Size(62, 20);
             this.mnuTransact.Text = "Transact";
             // 
+            // smnuCreateLeaving
+            // 
+            this.smnuCreateLeaving.Name = "smnuCreateLeaving";
+            this.smnuCreateLeaving.Size = new System.Drawing.Size(209, 22);
+            this.smnuCreateLeaving.Text = "Create Leaving Certificate";
+            // 
             // mnuReports
             // 
             this.mnuReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -79,30 +104,6 @@ namespace LeavingCertificate
             this.mnuReports.Name = "mnuReports";
             this.mnuReports.Size = new System.Drawing.Size(59, 20);
             this.mnuReports.Text = "Reports";
-            // 
-            // smnuRegisterStudent
-            // 
-            this.smnuRegisterStudent.Name = "smnuRegisterStudent";
-            this.smnuRegisterStudent.Size = new System.Drawing.Size(180, 22);
-            this.smnuRegisterStudent.Text = "Student Details";
-            // 
-            // smnuRegisterStream
-            // 
-            this.smnuRegisterStream.Name = "smnuRegisterStream";
-            this.smnuRegisterStream.Size = new System.Drawing.Size(180, 22);
-            this.smnuRegisterStream.Text = "Stream Details";
-            // 
-            // smnuRegisterSchool
-            // 
-            this.smnuRegisterSchool.Name = "smnuRegisterSchool";
-            this.smnuRegisterSchool.Size = new System.Drawing.Size(180, 22);
-            this.smnuRegisterSchool.Text = "School Details";
-            // 
-            // smnuCreateLeaving
-            // 
-            this.smnuCreateLeaving.Name = "smnuCreateLeaving";
-            this.smnuCreateLeaving.Size = new System.Drawing.Size(209, 22);
-            this.smnuCreateLeaving.Text = "Create Leaving Certificate";
             // 
             // smnuPrintLeaving
             // 

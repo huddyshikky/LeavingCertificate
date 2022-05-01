@@ -14,6 +14,5 @@ namespace LeavingCertificate.Models
         public string schemail { get; set; }
         public string schweb { get; set; }
         public string schtel { get; set; }
-        public string postalcode { get; set; }
     }
 }

@@ -14,5 +14,10 @@ namespace LeavingCertificate.UI
         {
             InitializeComponent();
         }
+
+        private void FrmCreateLeavingCert_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

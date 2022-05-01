@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeavingCertificate.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220501202432_recreated database with changes")]
-    partial class recreateddatabasewithchanges
+    [Migration("20220501221759_recreate database with modified school entity")]
+    partial class recreatedatabasewithmodifiedschoolentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -54,9 +54,6 @@ namespace LeavingCertificate.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("city")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("postalcode")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("schaddr")

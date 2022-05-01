@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LeavingCertificate.Migrations
 {
-    public partial class recreateddatabasewithchanges : Migration
+    public partial class recreatedatabasewithmodifiedschoolentity : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -19,8 +19,7 @@ namespace LeavingCertificate.Migrations
                     schmotto = table.Column<string>(nullable: true),
                     schemail = table.Column<string>(nullable: true),
                     schweb = table.Column<string>(nullable: true),
-                    schtel = table.Column<string>(nullable: true),
-                    postalcode = table.Column<string>(nullable: true)
+                    schtel = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

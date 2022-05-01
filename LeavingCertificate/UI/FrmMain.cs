@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LeavingCertificate
+namespace LeavingCertificate.UI
 {
     public partial class FrmMain : Form
     {
@@ -17,5 +17,9 @@ namespace LeavingCertificate
             InitializeComponent();
         }
 
+        private void smnuRegisterSchool_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

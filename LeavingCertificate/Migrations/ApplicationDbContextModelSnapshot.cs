@@ -54,9 +54,6 @@ namespace LeavingCertificate.Migrations
                     b.Property<string>("city")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("postalcode")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("schaddr")
                         .HasColumnType("TEXT");
 
