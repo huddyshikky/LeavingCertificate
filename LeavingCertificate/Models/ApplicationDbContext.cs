@@ -12,6 +12,9 @@ namespace LeavingCertificate.Models
             optionsBuilder.UseSqlite($"Data Source=DB/LeavingCert.db");
         }
 
-            public DbSet<Student> Students { get; set; }
+        public DbSet<Stream> Streams { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<LeavingCertDetail> LeavingCertDetails { get; set; }
+        public DbSet<SchoolDetail> SchoolDetails { get; set; }
     }
 }
