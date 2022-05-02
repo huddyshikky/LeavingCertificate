@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace LeavingCertificate.Models
@@ -9,7 +10,8 @@ namespace LeavingCertificate.Models
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite($"Data Source=DB/LeavingCert.db");
+            string dbPath = Environment.CurrentDirectory + @"\DB\LeavingCert.db";
+            optionsBuilder.UseSqlite($"Data Source={dbPath}");
         }
 
         public DbSet<Stream> Streams { get; set; }

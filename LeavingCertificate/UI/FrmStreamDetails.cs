@@ -14,5 +14,12 @@ namespace LeavingCertificate.UI
         {
             InitializeComponent();
         }
+
+        private void LblAdd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmStream_Add Frm = new FrmStream_Add();
+            Frm.btnSave.Text = "Save";
+            Frm.ShowDialog();
+        }
     }
 }

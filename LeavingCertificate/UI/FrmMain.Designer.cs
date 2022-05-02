@@ -67,20 +67,20 @@ namespace LeavingCertificate.UI
             // smnuRegisterSchool
             // 
             this.smnuRegisterSchool.Name = "smnuRegisterSchool";
-            this.smnuRegisterSchool.Size = new System.Drawing.Size(180, 22);
+            this.smnuRegisterSchool.Size = new System.Drawing.Size(153, 22);
             this.smnuRegisterSchool.Text = "School Details";
             this.smnuRegisterSchool.Click += new System.EventHandler(this.smnuRegisterSchool_Click);
             // 
             // smnuRegisterStream
             // 
             this.smnuRegisterStream.Name = "smnuRegisterStream";
-            this.smnuRegisterStream.Size = new System.Drawing.Size(180, 22);
+            this.smnuRegisterStream.Size = new System.Drawing.Size(153, 22);
             this.smnuRegisterStream.Text = "Stream Details";
             // 
             // smnuRegisterStudent
             // 
             this.smnuRegisterStudent.Name = "smnuRegisterStudent";
-            this.smnuRegisterStudent.Size = new System.Drawing.Size(180, 22);
+            this.smnuRegisterStudent.Size = new System.Drawing.Size(153, 22);
             this.smnuRegisterStudent.Text = "Student Details";
             // 
             // mnuTransact
@@ -132,6 +132,7 @@ namespace LeavingCertificate.UI
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Esenta Leaving Certificate System @2022";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
