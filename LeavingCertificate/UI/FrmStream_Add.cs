@@ -1,4 +1,5 @@
 ﻿using LeavingCertificate.Models;
+using LeavingCertificate.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,15 +12,15 @@ namespace LeavingCertificate.UI
 {
     public partial class FrmStream_Add : Form
     {
-        public FrmStream_Add()
+        StreamService streamService = new StreamService();
+
+        FrmStreamDetails Frm_StrDet;
+        public FrmStream_Add(FrmStreamDetails Frm_StrDet)
         {
             InitializeComponent();
+            this.Frm_StrDet = Frm_StrDet;
         }
 
-        private void FrmStream_Add_Load(object sender, EventArgs e)
-        {
-            clear();
-        }
         private void clear()
         {
             txtStream.Clear();
@@ -45,25 +46,29 @@ namespace LeavingCertificate.UI
 
                 if (btnSave.Text == "Save") //new record
                 {
-                    if (SchoolDetailService.Add(SchoolDetail))
+                    if (streamService.Add(stream))
                     {
-                        MessageBox.Show("School Details Added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Stream Added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        clear();
+                        txtStream.Focus();
                     }
                     else
                     {
-                        MessageBox.Show("Failed to add School Details", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Failed to add Stream", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else //update record
                 {
-                    SchoolDetail.Id = Pk;
-                    if (SchoolDetailService.Update(SchoolDetail))
+                    stream.Id = int.Parse(lbl_Id.Text.Trim());
+                    if (streamService.Update(stream))
                     {
-                        MessageBox.Show("School Details Updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Stream Updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                        Frm_StrDet.LoadData();
                     }
                     else
                     {
-                        MessageBox.Show("Failed to Update School Details", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Failed to Update Stream", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
                 }
@@ -75,6 +80,19 @@ namespace LeavingCertificate.UI
             {
                 MessageBox.Show(ex.Message, "Error Occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FrmStream_Add_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //FrmStreamDetails.close
+            //FrmStreamDetails frm = new FrmStreamDetails();
+            ////frm.Close();
+            //frm.Close();
+        }
+
+        private void FrmStream_Add_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

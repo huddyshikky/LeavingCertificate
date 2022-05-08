@@ -10,7 +10,7 @@ namespace LeavingCertificate.Models
         public int Id { get; set; }
         public int AdmNo { get; set; }
         public String StudName { get; set; }
-        public string ClassFirstEnrolled { get; set; }
+        public EnrolledEnum ClassFirstEnrolled { get; set; }
         public StudCatEnum Category { get; set; }
         public DateTime DateOfBirth { get; set; }
         public DateTime DateOfAdmission { get; set; }

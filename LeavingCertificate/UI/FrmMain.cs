@@ -23,5 +23,19 @@ namespace LeavingCertificate.UI
             //frmSchoolDetails.MdiParent = this;
             frmSchoolDetails.ShowDialog();
         }
+
+        private void smnuRegisterStream_Click(object sender, EventArgs e)
+        {
+            FrmStreamDetails frmStreamDetails = new FrmStreamDetails();
+            //frmSchoolDetails.MdiParent = this;
+            frmStreamDetails.ShowDialog();
+        }
+
+        private void smnuRegisterStudent_Click(object sender, EventArgs e)
+        {
+            FrmStudentDetails frmStudentDetails = new FrmStudentDetails();
+            //frmSchoolDetails.MdiParent = this;
+            frmStudentDetails.ShowDialog();
+        }
     }
 }

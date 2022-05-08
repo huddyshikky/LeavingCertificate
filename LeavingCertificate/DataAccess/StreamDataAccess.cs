@@ -1,4 +1,5 @@
 ﻿using LeavingCertificate.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,21 +19,48 @@ namespace LeavingCertificate.DataAccess
             }
 
         }
-        public Stream GetStream()
+        public Stream? GetById(int id)
         {
-            return db.Streams.FirstOrDefault();
+            using (db)
+            {
+                return db.Streams
+                .AsNoTracking()
+                .SingleOrDefault(p => p.Id == id);
+            }
+        }
+        public Stream GetOne()
+        {
+            return db.Streams.AsNoTracking().FirstOrDefault();
+        }
+        public List<Stream> GetAll()
+        {
+            return db.Streams.AsNoTracking().ToList();
         }
         public bool Update(Stream stream)
         {
             using (db)
             {
-                var Data = db.Streams.Find(stream.Id);
+                var Data = db.Streams.Find(stream.Id); ;
                 if (Data == null)
                 {
                     return false;
                 }
                 Data.StreamName = stream.StreamName;
 
+                return db.SaveChanges() > 0;
+            }
+
+        }
+        public bool Delete(Stream stream)
+        {
+            using (db)
+            {
+                var Data = db.Streams.Find(stream.Id); ;
+                if (Data == null)
+                {
+                    return false;
+                }
+                db.Remove(stream);
                 return db.SaveChanges() > 0;
             }
 

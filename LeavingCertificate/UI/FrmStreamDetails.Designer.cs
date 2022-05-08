@@ -29,9 +29,10 @@ namespace LeavingCertificate.UI
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.StreamdataGridView = new System.Windows.Forms.DataGridView();
             this.LblAdd = new System.Windows.Forms.LinkLabel();
+            this.StreamdataGridView = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stream = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
@@ -52,19 +53,6 @@ namespace LeavingCertificate.UI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Stream Details";
             // 
-            // StreamdataGridView
-            // 
-            this.StreamdataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.StreamdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.StreamdataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.Stream});
-            this.StreamdataGridView.Location = new System.Drawing.Point(16, 79);
-            this.StreamdataGridView.Name = "StreamdataGridView";
-            this.StreamdataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.StreamdataGridView.Size = new System.Drawing.Size(376, 155);
-            this.StreamdataGridView.TabIndex = 15;
-            // 
             // LblAdd
             // 
             this.LblAdd.AutoSize = true;
@@ -75,6 +63,24 @@ namespace LeavingCertificate.UI
             this.LblAdd.TabStop = true;
             this.LblAdd.Text = "Add New";
             this.LblAdd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LblAdd_LinkClicked);
+            // 
+            // StreamdataGridView
+            // 
+            this.StreamdataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.StreamdataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.StreamdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.StreamdataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Stream});
+            this.StreamdataGridView.GridColor = System.Drawing.SystemColors.ButtonFace;
+            this.StreamdataGridView.Location = new System.Drawing.Point(16, 79);
+            this.StreamdataGridView.Name = "StreamdataGridView";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.StreamdataGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.StreamdataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.StreamdataGridView.Size = new System.Drawing.Size(376, 155);
+            this.StreamdataGridView.TabIndex = 15;
+            this.StreamdataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.StreamdataGridView_RowHeaderMouseDoubleClick);
             // 
             // Id
             // 
@@ -93,7 +99,10 @@ namespace LeavingCertificate.UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 251);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FrmStreamDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.FrmStreamDetails_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StreamdataGridView)).EndInit();
@@ -102,11 +111,10 @@ namespace LeavingCertificate.UI
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView StreamdataGridView;
         private System.Windows.Forms.LinkLabel LblAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stream;
+        public System.Windows.Forms.GroupBox groupBox1;
     }
 }
